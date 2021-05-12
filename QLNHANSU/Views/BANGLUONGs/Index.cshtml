@@ -1,0 +1,52 @@
+﻿@model IEnumerable<QLNHANSU.Models.BANGLUONG>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NHANVIENs.TenNV)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HeSoLuong)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BacLuong)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TongNgayCong)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NHANVIENs.TenNV)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HeSoLuong)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BacLuong)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TongNgayCong)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MaLuong }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MaLuong }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MaLuong })
+        </td>
+    </tr>
+}
+
+</table>

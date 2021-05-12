@@ -1,0 +1,59 @@
+﻿@model QLNHANSU.Models.BANGCHAMCONG
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>BANGCHAMCONG</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NHANVIENs.TenNV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NHANVIENs.TenNV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TenNV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenNV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SoNgayNghi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoNgayNghi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SoNgayDiLam)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoNgayDiLam)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TongNgayCong)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TongNgayCong)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MaCC }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

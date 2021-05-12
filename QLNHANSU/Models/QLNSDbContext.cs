@@ -22,6 +22,7 @@ namespace QLNHANSU.Models
         public virtual DbSet<DUAN> DUANs { get; set; }
         public virtual DbSet<Account> Account { get; set; }
         public virtual DbSet<THONGTIN> THONGTINs { get; set; }
+        public virtual DbSet<Role> Roles { get; set; }
 
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

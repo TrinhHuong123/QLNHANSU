@@ -137,6 +137,7 @@
     <Compile Include="Controllers\KHENTHUONG_KYLUATController.cs" />
     <Compile Include="Controllers\NHANVIENsController.cs" />
     <Compile Include="Controllers\PHONGBANsController.cs" />
+    <Compile Include="Controllers\RolesController.cs" />
     <Compile Include="Controllers\THONGTINsController.cs" />
     <Compile Include="Controllers\TRINHDO_CMController.cs" />
     <Compile Include="Global.asax.cs">
@@ -150,6 +151,10 @@
     <Compile Include="Migrations\202105122017008_create_table_THONGTINs.Designer.cs">
       <DependentUpon>202105122017008_create_table_THONGTINs.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202105122034288_create_table_Roles.cs" />
+    <Compile Include="Migrations\202105122034288_create_table_Roles.Designer.cs">
+      <DependentUpon>202105122034288_create_table_Roles.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account.cs" />
     <Compile Include="Models\BANGCHAMCONG.cs" />
@@ -160,8 +165,10 @@
     <Compile Include="Models\NHANVIEN.cs" />
     <Compile Include="Models\PHONGBAN.cs" />
     <Compile Include="Models\QLNSDbContext.cs" />
+    <Compile Include="Models\Role.cs" />
     <Compile Include="Models\THONGTIN.cs" />
     <Compile Include="Models\TRINHDO_CM.cs" />
+    <Compile Include="Models\UserRoleProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -1354,6 +1361,11 @@
     <Content Include="Views\THONGTINs\Details.cshtml" />
     <Content Include="Views\THONGTINs\Edit.cshtml" />
     <Content Include="Views\THONGTINs\Index.cshtml" />
+    <Content Include="Views\Roles\Create.cshtml" />
+    <Content Include="Views\Roles\Delete.cshtml" />
+    <Content Include="Views\Roles\Details.cshtml" />
+    <Content Include="Views\Roles\Edit.cshtml" />
+    <Content Include="Views\Roles\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -1377,6 +1389,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202105122017008_create_table_THONGTINs.resx">
       <DependentUpon>202105122017008_create_table_THONGTINs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105122034288_create_table_Roles.resx">
+      <DependentUpon>202105122034288_create_table_Roles.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -10,6 +10,9 @@ namespace QLNHANSU.Controllers
 {
     public class AccountController : Controller
     {
+        QLNSDbContext db = new QLNSDbContext();
+        [Authorize(Roles = "Role01")]
+        [AllowAnonymous]
         //Action Login(HttpGet), mặc định là get
         public ViewResult Login(string returnUrl)
         {
@@ -25,8 +28,9 @@ namespace QLNHANSU.Controllers
             // Nếu vượt qua được validation ở accounmodel
             if (ModelState.IsValid)
             {
+                var model = db.Account.Where(m => m.Username == acc.Username && m.Password == acc.Password).ToList().Count();
                 //kiểm tra thông tin đăng nhập
-                if (acc.Username == "admin" && acc.Password == "123123")
+                if (model == 1)
                 {
                     //set cookie
                     FormsAuthentication.SetAuthCookie(acc.Username, true);

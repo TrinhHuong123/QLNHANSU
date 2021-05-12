@@ -18,5 +18,6 @@ namespace QLNHANSU.Models
         //dinh nghia DataType
         [DataType(DataType.Password)]
         public string Password { get; set; }
+        public string RoleID { get; set; }
     }
 }

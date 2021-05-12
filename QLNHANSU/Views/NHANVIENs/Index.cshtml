@@ -13,6 +13,9 @@
 <table class="table">
     <tr>
         <th>
+            @Html.DisplayNameFor(model => model.MaNV)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.CHUCVUs.TenCV)
         </th>
         <th>
@@ -40,37 +43,40 @@
     </tr>
 
 @foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.CHUCVUs.TenCV)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TenNV)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SĐT)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DiaChi)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ChucVu)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.GioiTinh)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PhongBan)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NgaykiHD)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.MaNV }) |
-            @Html.ActionLink("Details", "Details", new { id=item.MaNV }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.MaNV })
-        </td>
-    </tr>
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.MaNV)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.CHUCVUs.TenCV)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.TenNV)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.SĐT)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.DiaChi)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ChucVu)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.GioiTinh)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.PhongBan)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.NgaykiHD)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.MaNV }) |
+        @Html.ActionLink("Details", "Details", new { id = item.MaNV }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.MaNV })
+    </td>
+</tr>
 }
 
 </table>

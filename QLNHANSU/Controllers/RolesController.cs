@@ -10,108 +10,108 @@ using QLNHANSU.Models;
 
 namespace QLNHANSU.Controllers
 {
-    [Authorize(Roles = "admin")]
-    public class THONGTINsController : Controller
+    public class RolesController : Controller
     {
         private QLNSDbContext db = new QLNSDbContext();
+        [Authorize(Roles = "admin")]
 
-        // GET: THONGTINs
+        // GET: Roles
         public ActionResult Index()
         {
-            return View(db.THONGTINs.ToList());
+            return View(db.Roles.ToList());
         }
 
-        // GET: THONGTINs/Details/5
+        // GET: Roles/Details/5
         public ActionResult Details(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            THONGTIN tHONGTIN = db.THONGTINs.Find(id);
-            if (tHONGTIN == null)
+            Role role = db.Roles.Find(id);
+            if (role == null)
             {
                 return HttpNotFound();
             }
-            return View(tHONGTIN);
+            return View(role);
         }
 
-        // GET: THONGTINs/Create
+        // GET: Roles/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: THONGTINs/Create
+        // POST: Roles/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ThongtinID,Tieude,Noidung")] THONGTIN tHONGTIN)
+        public ActionResult Create([Bind(Include = "RoleID,RoleName")] Role role)
         {
             if (ModelState.IsValid)
             {
-                db.THONGTINs.Add(tHONGTIN);
+                db.Roles.Add(role);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(tHONGTIN);
+            return View(role);
         }
 
-        // GET: THONGTINs/Edit/5
+        // GET: Roles/Edit/5
         public ActionResult Edit(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            THONGTIN tHONGTIN = db.THONGTINs.Find(id);
-            if (tHONGTIN == null)
+            Role role = db.Roles.Find(id);
+            if (role == null)
             {
                 return HttpNotFound();
             }
-            return View(tHONGTIN);
+            return View(role);
         }
 
-        // POST: THONGTINs/Edit/5
+        // POST: Roles/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ThongtinID,Tieude,Noidung")] THONGTIN tHONGTIN)
+        public ActionResult Edit([Bind(Include = "RoleID,RoleName")] Role role)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(tHONGTIN).State = EntityState.Modified;
+                db.Entry(role).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(tHONGTIN);
+            return View(role);
         }
 
-        // GET: THONGTINs/Delete/5
+        // GET: Roles/Delete/5
         public ActionResult Delete(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            THONGTIN tHONGTIN = db.THONGTINs.Find(id);
-            if (tHONGTIN == null)
+            Role role = db.Roles.Find(id);
+            if (role == null)
             {
                 return HttpNotFound();
             }
-            return View(tHONGTIN);
+            return View(role);
         }
 
-        // POST: THONGTINs/Delete/5
+        // POST: Roles/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(string id)
         {
-            THONGTIN tHONGTIN = db.THONGTINs.Find(id);
-            db.THONGTINs.Remove(tHONGTIN);
+            Role role = db.Roles.Find(id);
+            db.Roles.Remove(role);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

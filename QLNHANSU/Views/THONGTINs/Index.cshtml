@@ -27,7 +27,7 @@
             @Html.DisplayFor(modelItem => item.Tieude)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Noidung)
+            @Html.Raw(item.Noidung)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.ThongtinID }) |
